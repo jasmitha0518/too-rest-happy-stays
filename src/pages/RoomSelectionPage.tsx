@@ -137,7 +137,7 @@ const RoomSelectionPage = () => {
                   <div className="flex items-center justify-between">
                     <div>
                       <p className="font-medium text-foreground">{currentBooking.roomType} Room</p>
-                      <p className="text-muted-foreground text-sm">${room.price}/night per room</p>
+                      <p className="text-muted-foreground text-sm">₹{room.price}/night per room</p>
                     </div>
                     <div className="flex items-center gap-4">
                       <button
@@ -173,7 +173,7 @@ const RoomSelectionPage = () => {
                   <div className="space-y-4 mb-6">
                     <div className="flex justify-between text-foreground">
                       <span>Room ({currentBooking.roomType})</span>
-                      <span>${room.price}/night</span>
+                      <span>₹{room.price}/night</span>
                     </div>
                     <div className="flex justify-between text-foreground">
                       <span>Nights</span>
@@ -185,18 +185,18 @@ const RoomSelectionPage = () => {
                     </div>
                     <div className="border-t border-border pt-4 flex justify-between text-foreground">
                       <span>Subtotal</span>
-                      <span className="font-semibold">${totalPrice.toFixed(2)}</span>
+                      <span className="font-semibold">₹{totalPrice.toFixed(2)}</span>
                     </div>
                     <div className="flex justify-between text-muted-foreground">
                       <span>Tax (12%)</span>
-                      <span>${tax.toFixed(2)}</span>
+                      <span>₹{tax.toFixed(2)}</span>
                     </div>
                   </div>
 
                   <div className="bg-primary/10 -mx-6 px-6 py-4 mb-6">
                     <div className="flex justify-between items-center">
                       <span className="font-display text-xl font-semibold text-foreground">Total</span>
-                      <span className="text-3xl font-bold text-primary">${grandTotal.toFixed(2)}</span>
+                      <span className="text-3xl font-bold text-primary">₹{grandTotal.toFixed(2)}</span>
                     </div>
                   </div>
 

@@ -251,7 +251,7 @@ const HomePage = () => {
                   </p>
                   <div className="flex items-center justify-between">
                     <div>
-                      <span className="text-2xl font-bold text-primary">${hotel.pricePerNight}</span>
+                      <span className="text-2xl font-bold text-primary">₹{hotel.pricePerNight}</span>
                       <span className="text-muted-foreground text-sm">/night</span>
                     </div>
                     <Button variant="outline" size="sm">
