@@ -214,7 +214,7 @@ const GuestDetailsPage = () => {
                   <div className="bg-primary/10 -mx-6 px-6 py-4 mb-6">
                     <div className="flex justify-between items-center">
                       <span className="font-display text-xl font-semibold text-foreground">Total</span>
-                      <span className="text-3xl font-bold text-primary">${currentBooking.totalAmount?.toFixed(2)}</span>
+                      <span className="text-3xl font-bold text-primary">₹{currentBooking.totalAmount?.toFixed(2)}</span>
                     </div>
                   </div>
 

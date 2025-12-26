@@ -262,7 +262,7 @@ const HotelListingPage = () => {
                           <div className="flex items-center justify-between">
                             <div>
                               <span className="text-2xl font-bold text-primary">
-                                ${hotel.pricePerNight}
+                                ₹{hotel.pricePerNight}
                               </span>
                               <span className="text-muted-foreground text-sm">/night</span>
                             </div>

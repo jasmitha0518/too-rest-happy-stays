@@ -112,7 +112,7 @@ const MyBookingsPage = () => {
                                 </div>
                                 <div>
                                   <p className="text-muted-foreground">Total</p>
-                                  <p className="font-bold text-primary">${booking.totalAmount.toFixed(2)}</p>
+                                  <p className="font-bold text-primary">₹{booking.totalAmount.toFixed(2)}</p>
                                 </div>
                               </div>
 

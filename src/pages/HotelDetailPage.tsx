@@ -162,7 +162,7 @@ const HotelDetailPage = () => {
                         </div>
                         <div className="flex items-center gap-4">
                           <div className="text-right">
-                            <span className="text-2xl font-bold text-primary">${room.price}</span>
+                            <span className="text-2xl font-bold text-primary">₹{room.price}</span>
                             <span className="text-muted-foreground">/night</span>
                           </div>
                           <Button
@@ -251,7 +251,7 @@ const HotelDetailPage = () => {
                 <CardContent className="p-6">
                   <h3 className="font-display text-xl font-semibold text-foreground mb-4">Starting From</h3>
                   <div className="flex items-baseline gap-2 mb-6">
-                    <span className="text-4xl font-bold text-primary">${hotel.pricePerNight}</span>
+                    <span className="text-4xl font-bold text-primary">₹{hotel.pricePerNight}</span>
                     <span className="text-muted-foreground">/night</span>
                   </div>
                   <Button variant="hero" className="w-full" size="lg" onClick={() => handleSelectRoom(hotel.rooms[0].type, hotel.rooms[0].price)}>
