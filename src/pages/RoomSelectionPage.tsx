@@ -64,27 +64,27 @@ const RoomSelectionPage = () => {
 
       <div className="pt-24 pb-12">
         <div className="container mx-auto px-4 max-w-4xl">
-          <div className="mb-8">
-            <h1 className="text-4xl font-display font-bold text-foreground mb-2">Select Your Room</h1>
-            <p className="text-muted-foreground">Configure your stay at {hotel.name}</p>
+          <div className="mb-6 md:mb-8">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-foreground mb-2">Select Your Room</h1>
+            <p className="text-sm sm:text-base text-muted-foreground">Configure your stay at {hotel.name}</p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 md:gap-8">
             {/* Room Configuration */}
-            <div className="lg:col-span-3 space-y-6">
+            <div className="lg:col-span-3 space-y-4 sm:space-y-6">
               {/* Hotel Summary */}
               <Card className="animate-fade-in-up">
-                <CardContent className="p-6">
-                  <div className="flex gap-4">
+                <CardContent className="p-4 sm:p-6">
+                  <div className="flex gap-3 sm:gap-4">
                     <img
                       src={hotel.image}
                       alt={hotel.name}
-                      className="w-24 h-24 rounded-lg object-cover"
+                      className="w-20 h-20 sm:w-24 sm:h-24 rounded-lg object-cover shrink-0"
                     />
-                    <div>
-                      <h3 className="font-display text-xl font-semibold text-foreground">{hotel.name}</h3>
-                      <p className="text-muted-foreground text-sm mb-2">{hotel.location}</p>
-                      <span className="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">
+                    <div className="min-w-0">
+                      <h3 className="font-display text-lg sm:text-xl font-semibold text-foreground truncate">{hotel.name}</h3>
+                      <p className="text-muted-foreground text-xs sm:text-sm mb-2 truncate">{hotel.location}</p>
+                      <span className="inline-block px-2 sm:px-3 py-1 bg-primary/10 text-primary rounded-full text-xs sm:text-sm font-medium">
                         {currentBooking.roomType} Room
                       </span>
                     </div>
