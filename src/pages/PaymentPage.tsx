@@ -83,25 +83,25 @@ const PaymentPage = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
             {/* Payment Methods */}
-            <div className="lg:col-span-3 space-y-6">
+            <div className="lg:col-span-3 space-y-4 sm:space-y-6">
               {/* Payment Method Selection */}
               <Card className="animate-fade-in-up">
-                <CardContent className="p-8">
+                <CardContent className="p-4 sm:p-6 md:p-8">
                   <h3 className="font-display text-xl font-semibold text-foreground mb-6">Select Payment Method</h3>
                   
-                  <div className="grid grid-cols-2 gap-4 mb-8">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-6 sm:mb-8">
                     {paymentMethods.map((method) => (
                       <button
                         key={method.id}
                         onClick={() => setPaymentMethod(method.id)}
-                        className={`flex items-center gap-3 p-4 rounded-xl border-2 transition-all ${
+                        className={`flex items-center gap-2 sm:gap-3 p-3 sm:p-4 rounded-xl border-2 transition-all ${
                           paymentMethod === method.id
                             ? 'border-primary bg-primary/5'
                             : 'border-border hover:border-primary/50'
                         }`}
                       >
-                        <method.icon className={`w-6 h-6 ${paymentMethod === method.id ? 'text-primary' : 'text-muted-foreground'}`} />
-                        <span className={`font-medium ${paymentMethod === method.id ? 'text-primary' : 'text-foreground'}`}>
+                        <method.icon className={`w-5 h-5 sm:w-6 sm:h-6 ${paymentMethod === method.id ? 'text-primary' : 'text-muted-foreground'}`} />
+                        <span className={`font-medium text-sm sm:text-base ${paymentMethod === method.id ? 'text-primary' : 'text-foreground'}`}>
                           {method.label}
                         </span>
                       </button>

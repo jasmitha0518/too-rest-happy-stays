@@ -47,7 +47,7 @@ const HomePage = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative h-[85vh] min-h-[600px] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[100svh] md:min-h-[85vh] flex items-center justify-center overflow-hidden pt-20 pb-8 md:pt-0 md:pb-0">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroBg})` }}
@@ -55,22 +55,22 @@ const HomePage = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-foreground/40 via-foreground/30 to-foreground/60" />
         
         <div className="relative z-10 container mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-7xl font-display font-bold text-primary-foreground mb-6 animate-fade-in-up">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-display font-bold text-primary-foreground mb-4 md:mb-6 animate-fade-in-up">
             Find Your Perfect
             <span className="block text-gradient bg-gradient-to-r from-purple-200 to-purple-100 bg-clip-text text-transparent">
               Stay
             </span>
           </h1>
-          <p className="text-xl md:text-2xl text-primary-foreground/90 mb-12 max-w-2xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+          <p className="text-base sm:text-xl md:text-2xl text-primary-foreground/90 mb-6 md:mb-12 max-w-2xl mx-auto animate-fade-in-up px-2" style={{ animationDelay: '0.2s' }}>
             Discover amazing hotels worldwide with exclusive deals and unforgettable experiences
           </p>
 
           {/* Search Card */}
           <Card className="max-w-5xl mx-auto glass-card animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-            <CardContent className="p-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4">
-                <div className="lg:col-span-2 space-y-2">
-                  <label className="text-sm font-medium text-muted-foreground flex items-center gap-2">
+            <CardContent className="p-4 sm:p-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-3 sm:gap-4">
+                <div className="sm:col-span-2 lg:col-span-2 space-y-2">
+                  <label className="text-xs sm:text-sm font-medium text-muted-foreground flex items-center gap-2">
                     <MapPin className="w-4 h-4" /> Location / City
                   </label>
                   <Input
@@ -81,7 +81,7 @@ const HomePage = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-muted-foreground flex items-center gap-2">
+                  <label className="text-xs sm:text-sm font-medium text-muted-foreground flex items-center gap-2">
                     <Calendar className="w-4 h-4" /> Check-in
                   </label>
                   <Input
@@ -92,7 +92,7 @@ const HomePage = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-muted-foreground flex items-center gap-2">
+                  <label className="text-xs sm:text-sm font-medium text-muted-foreground flex items-center gap-2">
                     <Calendar className="w-4 h-4" /> Check-out
                   </label>
                   <Input
@@ -103,7 +103,7 @@ const HomePage = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-muted-foreground flex items-center gap-2">
+                  <label className="text-xs sm:text-sm font-medium text-muted-foreground flex items-center gap-2">
                     <Users className="w-4 h-4" /> Guests / Rooms
                   </label>
                   <div className="flex gap-2">
@@ -126,8 +126,8 @@ const HomePage = () => {
                   </div>
                 </div>
 
-                <div className="flex items-end">
-                  <Button variant="hero" size="xl" className="w-full" onClick={handleSearch}>
+                <div className="flex items-end sm:col-span-2 lg:col-span-1">
+                  <Button variant="hero" size="lg" className="w-full" onClick={handleSearch}>
                     <Search className="w-5 h-5" />
                     Search
                   </Button>
@@ -139,14 +139,14 @@ const HomePage = () => {
       </section>
 
       {/* Offers Section */}
-      <section className="py-20 bg-secondary/50">
+      <section className="py-12 md:py-20 bg-secondary/50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-display font-bold text-foreground mb-4">Exclusive Offers</h2>
-            <p className="text-lg text-muted-foreground">Save big on your next adventure</p>
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-foreground mb-2 md:mb-4">Exclusive Offers</h2>
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground">Save big on your next adventure</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
             {offers.map((offer, index) => (
               <Card key={index} className="hover-lift overflow-hidden group cursor-pointer">
                 <CardContent className="p-6">
@@ -170,20 +170,20 @@ const HomePage = () => {
       </section>
 
       {/* Popular Destinations */}
-      <section className="py-20">
+      <section className="py-12 md:py-20">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between mb-12">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-8 md:mb-12 gap-4">
             <div>
-              <h2 className="text-4xl font-display font-bold text-foreground mb-4">Popular Destinations</h2>
-              <p className="text-lg text-muted-foreground">Explore trending locations</p>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-foreground mb-2 md:mb-4">Popular Destinations</h2>
+              <p className="text-sm sm:text-base md:text-lg text-muted-foreground">Explore trending locations</p>
             </div>
-            <Button variant="outline" onClick={() => { setSearchParams(null); navigate('/hotels'); }}>
+            <Button variant="outline" size="sm" className="w-fit" onClick={() => { setSearchParams(null); navigate('/hotels'); }}>
               View All
               <ChevronRight className="w-4 h-4" />
             </Button>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
             {destinations.map((dest, index) => (
               <Card
                 key={index}
@@ -193,12 +193,12 @@ const HomePage = () => {
                   navigate('/hotels');
                 }}
               >
-                <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 mx-auto rounded-full bg-purple-100 flex items-center justify-center mb-4 group-hover:bg-primary transition-colors">
-                    <dest.icon className="w-8 h-8 text-primary group-hover:text-primary-foreground transition-colors" />
+                <CardContent className="p-4 sm:p-6 text-center">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto rounded-full bg-purple-100 flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-primary transition-colors">
+                    <dest.icon className="w-6 h-6 sm:w-8 sm:h-8 text-primary group-hover:text-primary-foreground transition-colors" />
                   </div>
-                  <h3 className="font-display text-xl font-semibold text-foreground mb-1">{dest.name}</h3>
-                  <p className="text-muted-foreground text-sm">{dest.hotels} Hotels</p>
+                  <h3 className="font-display text-base sm:text-xl font-semibold text-foreground mb-1">{dest.name}</h3>
+                  <p className="text-muted-foreground text-xs sm:text-sm">{dest.hotels} Hotels</p>
                 </CardContent>
               </Card>
             ))}
@@ -207,14 +207,14 @@ const HomePage = () => {
       </section>
 
       {/* Featured Hotels */}
-      <section className="py-20 bg-secondary/50">
+      <section className="py-12 md:py-20 bg-secondary/50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-display font-bold text-foreground mb-4">Featured Hotels</h2>
-            <p className="text-lg text-muted-foreground">Handpicked for exceptional experiences</p>
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-foreground mb-2 md:mb-4">Featured Hotels</h2>
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground">Handpicked for exceptional experiences</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {hotels.slice(0, 3).map((hotel) => (
               <Card
                 key={hotel.id}
@@ -266,12 +266,12 @@ const HomePage = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 bg-foreground text-primary-foreground">
+      <footer className="py-8 md:py-12 bg-foreground text-primary-foreground">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <h3 className="text-3xl font-display font-bold mb-4">TooRest</h3>
-              <p className="text-primary-foreground/70">Your trusted partner for unforgettable hotel experiences worldwide.</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+            <div className="col-span-2 md:col-span-1">
+              <h3 className="text-xl sm:text-3xl font-display font-bold mb-3 md:mb-4">TooRest</h3>
+              <p className="text-primary-foreground/70 text-sm sm:text-base">Your trusted partner for unforgettable hotel experiences worldwide.</p>
             </div>
             <div>
               <h4 className="font-semibold mb-4">Quick Links</h4>

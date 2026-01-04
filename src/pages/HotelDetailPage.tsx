@@ -56,7 +56,7 @@ const HotelDetailPage = () => {
 
       <div className="pt-20 pb-12">
         {/* Image Gallery */}
-        <div className="relative h-[60vh] min-h-[400px] bg-muted overflow-hidden">
+        <div className="relative h-[40vh] sm:h-[50vh] md:h-[60vh] min-h-[280px] bg-muted overflow-hidden">
           <img
             src={hotel.images[activeImageIndex]}
             alt={hotel.name}
@@ -67,24 +67,24 @@ const HotelDetailPage = () => {
           {/* Navigation arrows */}
           <button
             onClick={() => setActiveImageIndex((prev) => (prev > 0 ? prev - 1 : hotel.images.length - 1))}
-            className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-card/80 backdrop-blur-sm flex items-center justify-center hover:bg-card transition-colors"
+            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-card/80 backdrop-blur-sm flex items-center justify-center hover:bg-card transition-colors"
           >
-            <ChevronLeft className="w-6 h-6" />
+            <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
           <button
             onClick={() => setActiveImageIndex((prev) => (prev < hotel.images.length - 1 ? prev + 1 : 0))}
-            className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-card/80 backdrop-blur-sm flex items-center justify-center hover:bg-card transition-colors"
+            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-card/80 backdrop-blur-sm flex items-center justify-center hover:bg-card transition-colors"
           >
-            <ChevronRight className="w-6 h-6" />
+            <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
 
           {/* Thumbnail strip */}
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+          <div className="absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 sm:gap-2 max-w-[90%] overflow-x-auto pb-1">
             {hotel.images.map((img, index) => (
               <button
                 key={index}
                 onClick={() => setActiveImageIndex(index)}
-                className={`w-16 h-12 rounded-lg overflow-hidden border-2 transition-all ${
+                className={`w-12 h-9 sm:w-16 sm:h-12 rounded-lg overflow-hidden border-2 transition-all shrink-0 ${
                   activeImageIndex === index ? 'border-primary scale-110' : 'border-transparent opacity-70 hover:opacity-100'
                 }`}
               >
@@ -94,36 +94,36 @@ const HotelDetailPage = () => {
           </div>
         </div>
 
-        <div className="container mx-auto px-4 -mt-16 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="container mx-auto px-4 -mt-8 sm:-mt-16 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
             {/* Main Content */}
-            <div className="lg:col-span-2 space-y-8">
+            <div className="lg:col-span-2 space-y-6 md:space-y-8">
               {/* Hotel Info Card */}
               <Card className="animate-fade-in-up">
-                <CardContent className="p-8">
-                  <div className="flex flex-wrap items-start justify-between gap-4 mb-6">
+                <CardContent className="p-4 sm:p-6 md:p-8">
+                  <div className="flex flex-col sm:flex-row sm:flex-wrap items-start justify-between gap-3 sm:gap-4 mb-4 sm:mb-6">
                     <div>
-                      <span className={`inline-block px-3 py-1 rounded-full text-sm font-medium mb-3 ${
+                      <span className={`inline-block px-3 py-1 rounded-full text-xs sm:text-sm font-medium mb-2 sm:mb-3 ${
                         hotel.type === 'Luxury' ? 'bg-gold text-gold-foreground' :
                         hotel.type === 'Resort' ? 'bg-primary text-primary-foreground' :
                         'bg-secondary text-secondary-foreground'
                       }`}>
                         {hotel.type}
                       </span>
-                      <h1 className="text-4xl font-display font-bold text-foreground mb-2">{hotel.name}</h1>
-                      <p className="text-muted-foreground flex items-center gap-2">
-                        <MapPin className="w-5 h-5" />
+                      <h1 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-foreground mb-2">{hotel.name}</h1>
+                      <p className="text-muted-foreground flex items-center gap-2 text-sm sm:text-base">
+                        <MapPin className="w-4 h-4 sm:w-5 sm:h-5" />
                         {hotel.location}
                       </p>
                     </div>
-                    <div className="flex items-center gap-2 bg-secondary px-4 py-2 rounded-xl">
-                      <Star className="w-6 h-6 text-gold fill-current" />
-                      <span className="text-2xl font-bold text-foreground">{hotel.rating}</span>
-                      <span className="text-muted-foreground">({hotel.reviews} reviews)</span>
+                    <div className="flex items-center gap-2 bg-secondary px-3 sm:px-4 py-2 rounded-xl">
+                      <Star className="w-5 h-5 sm:w-6 sm:h-6 text-gold fill-current" />
+                      <span className="text-xl sm:text-2xl font-bold text-foreground">{hotel.rating}</span>
+                      <span className="text-muted-foreground text-xs sm:text-sm">({hotel.reviews})</span>
                     </div>
                   </div>
 
-                  <p className="text-foreground/80 text-lg leading-relaxed mb-8">{hotel.description}</p>
+                  <p className="text-foreground/80 text-sm sm:text-base md:text-lg leading-relaxed mb-6 md:mb-8">{hotel.description}</p>
 
                   {/* Amenities */}
                   <div>
@@ -145,33 +145,36 @@ const HotelDetailPage = () => {
 
               {/* Room Types */}
               <Card className="animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-                <CardContent className="p-8">
-                  <h3 className="font-display text-2xl font-semibold text-foreground mb-6">Available Rooms</h3>
-                  <div className="space-y-4">
+                <CardContent className="p-4 sm:p-6 md:p-8">
+                  <h3 className="font-display text-xl sm:text-2xl font-semibold text-foreground mb-4 sm:mb-6">Available Rooms</h3>
+                  <div className="space-y-3 sm:space-y-4">
                     {hotel.rooms.map((room) => (
                       <div
                         key={room.type}
-                        className="flex flex-col sm:flex-row sm:items-center justify-between p-6 bg-secondary/50 rounded-xl gap-4"
+                        className="flex flex-col p-4 sm:p-6 bg-secondary/50 rounded-xl gap-3 sm:gap-4"
                       >
-                        <div>
-                          <h4 className="font-display text-xl font-semibold text-foreground mb-1">{room.type} Room</h4>
-                          <p className="text-muted-foreground flex items-center gap-2">
-                            <Users className="w-4 h-4" />
-                            Up to {room.capacity} guests • {room.available} available
-                          </p>
-                        </div>
-                        <div className="flex items-center gap-4">
-                          <div className="text-right">
-                            <span className="text-2xl font-bold text-primary">₹{room.price}</span>
-                            <span className="text-muted-foreground">/night</span>
+                        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                          <div>
+                            <h4 className="font-display text-lg sm:text-xl font-semibold text-foreground mb-1">{room.type} Room</h4>
+                            <p className="text-muted-foreground text-sm flex items-center gap-2">
+                              <Users className="w-4 h-4" />
+                              Up to {room.capacity} guests • {room.available} available
+                            </p>
                           </div>
-                          <Button
-                            variant="hero"
-                            onClick={() => handleSelectRoom(room.type, room.price)}
-                            disabled={room.available === 0}
-                          >
-                            Select Room
-                          </Button>
+                          <div className="flex items-center justify-between sm:justify-end gap-3 sm:gap-4">
+                            <div className="sm:text-right">
+                              <span className="text-xl sm:text-2xl font-bold text-primary">₹{room.price}</span>
+                              <span className="text-muted-foreground text-sm">/night</span>
+                            </div>
+                            <Button
+                              variant="hero"
+                              size="sm"
+                              onClick={() => handleSelectRoom(room.type, room.price)}
+                              disabled={room.available === 0}
+                            >
+                              Select
+                            </Button>
+                          </div>
                         </div>
                       </div>
                     ))}
