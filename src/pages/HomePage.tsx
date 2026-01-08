@@ -55,9 +55,9 @@ const HomePage = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-foreground/40 via-foreground/30 to-foreground/60" />
         
         <div className="relative z-10 container mx-auto px-4 text-center py-8 md:py-0">
-          <h1 className="text-2xl sm:text-4xl md:text-7xl font-display font-bold text-primary-foreground mb-3 md:mb-6 animate-fade-in-up">
-            Find Your Perfect
-            <span className="block text-gradient bg-gradient-to-r from-purple-200 to-purple-100 bg-clip-text text-transparent">
+          <h1 className="text-2xl sm:text-4xl md:text-7xl font-display font-bold mb-3 md:mb-6 animate-fade-in-up">
+            <span className="text-purple-200">Find Your Perfect</span>
+            <span className="block bg-gradient-to-r from-purple-300 to-purple-100 bg-clip-text text-transparent">
               Stay
             </span>
           </h1>
