@@ -47,21 +47,21 @@ const HomePage = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative min-h-[100svh] md:min-h-[85vh] flex items-center justify-center overflow-hidden pt-20 pb-8 md:pt-0 md:pb-0">
+      <section className="relative min-h-[auto] md:min-h-[85vh] flex items-center justify-center overflow-hidden pt-20 pb-8 md:pt-0 md:pb-0">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroBg})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-foreground/40 via-foreground/30 to-foreground/60" />
         
-        <div className="relative z-10 container mx-auto px-4 text-center">
-          <h1 className="text-3xl sm:text-5xl md:text-7xl font-display font-bold text-primary-foreground mb-4 md:mb-6 animate-fade-in-up">
+        <div className="relative z-10 container mx-auto px-4 text-center py-8 md:py-0">
+          <h1 className="text-2xl sm:text-4xl md:text-7xl font-display font-bold text-primary-foreground mb-3 md:mb-6 animate-fade-in-up">
             Find Your Perfect
             <span className="block text-gradient bg-gradient-to-r from-purple-200 to-purple-100 bg-clip-text text-transparent">
               Stay
             </span>
           </h1>
-          <p className="text-base sm:text-xl md:text-2xl text-primary-foreground/90 mb-6 md:mb-12 max-w-2xl mx-auto animate-fade-in-up px-2" style={{ animationDelay: '0.2s' }}>
+          <p className="text-sm sm:text-lg md:text-2xl text-primary-foreground/90 mb-4 md:mb-12 max-w-2xl mx-auto animate-fade-in-up px-2" style={{ animationDelay: '0.2s' }}>
             Discover amazing hotels worldwide with exclusive deals and unforgettable experiences
           </p>
 
